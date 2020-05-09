@@ -72,7 +72,7 @@ class PostsList extends Component {
   }
 
   render() {
-    const { posts, loadingPosts, limit } = this.props
+    const { posts, limit } = this.props
     return (
       <InfiniteScroll
         pageStart={0}

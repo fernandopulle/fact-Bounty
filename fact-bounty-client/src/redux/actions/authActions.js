@@ -45,6 +45,7 @@ export const loginUser = userData => dispatch => {
       )
     })
     .catch(err => {
+      console.log(err)
       let payload = err.response.data
       if (typeof payload === 'string') {
         payload = { fetch: err.response.data }
@@ -104,7 +105,7 @@ export const OauthUser = creds => dispatch => {
       )
     })
     .catch(err => {
-      let payload = err.response.data
+      let payload = JSON.parse(JSON.stringify(err.response.data)) 
       if (typeof payload === 'string') {
         payload = { fetch: err.response.data }
       }

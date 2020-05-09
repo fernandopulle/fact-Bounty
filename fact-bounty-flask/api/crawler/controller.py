@@ -98,12 +98,6 @@ class CrawlByDate(MethodView):
     def get(self):
         scrapyd = current_app.scrapy
         try:
-            data = request.get_json(silent=True)
-            # live = data['live'] == 'True'
-            # if not live:
-            #     date = data['date']
-            #     date = dparser.parse(date).date()
-            # else:
             date = datetime.now().date()
 
             spiders = scrapyd.list_spiders('default')

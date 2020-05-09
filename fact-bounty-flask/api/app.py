@@ -20,7 +20,7 @@ def create_app(config_name):
         app = Flask(
             __name__,
             static_folder="../build/static",
-            template_folder="../build",
+            template_folder="../templates",
         )
         app.config.from_object(config[config_name])
         config[config_name].init_app(app)
@@ -47,7 +47,7 @@ def register_extensions(app):
     mail.init_app(app)
     migrate.init_app(app, db)
     pagedown.init_app(app)
-    swag = Swagger(app)  # noqa: F841
+
     if os.environ.get("FLASK_CONFIG") != "production":
         es = Elasticsearch([app.config["ES_URL"]])
     else:
