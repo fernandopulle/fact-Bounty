@@ -15,11 +15,9 @@ export const submitForm = (
   dispatch({ type: START_CONTACT_FORM_SUBMIT })
   ContactUsService.contactUsSubmit(name, email, phone, subject, message)
     .then(res => {
-      console.log(res)
       dispatch({ type: CONTACT_FORM_SUBMIT_SUCCESS })
     })
     .catch(err => {
       dispatch({ type: CONTACT_FORM_SUBMIT_FAIL, payload: err })
-      console.error('Server response invalid:', err)
     })
 }

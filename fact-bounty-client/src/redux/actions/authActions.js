@@ -45,7 +45,6 @@ export const loginUser = userData => dispatch => {
       )
     })
     .catch(err => {
-      console.log(err)
       let payload = err.response.data
       if (typeof payload === 'string') {
         payload = { fetch: err.response.data }
@@ -132,13 +131,8 @@ export const logoutUser = () => dispatch => {
           localStorage.removeItem('refresh_token')
           localStorage.removeItem('user_details')
         })
-        .catch(err => {
-          console.error(err)
-        })
     })
-    .catch(err => {
-      console.error(err)
-    })
+
 }
 
 export const forgotPassword = userData => dispatch => {
