@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import {
-  KIBANA_DEV_DASHBOARD,
-  KIBANA_PROD_DASHBOARD
+  KIBANA_DEV_DASHBOARD
 } from '../../constants/KibanaConstants'
 import './style.sass'
 

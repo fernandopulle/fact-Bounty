@@ -51,6 +51,4 @@ storyprint.add_url_rule(
 storyprint.add_url_rule(
     "/stories/delete-comment",
     view_func=storyController["deletecomment"],
-    methods=["DELETE"],
-)
-
+    methods=["DELETE"],)

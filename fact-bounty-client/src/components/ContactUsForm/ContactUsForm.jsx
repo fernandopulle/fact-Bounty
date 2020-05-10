@@ -62,10 +62,11 @@ class ContactUsForm extends Component {
             }}
           />
           <input
-            type="number"
+            type="tel"
             name="phone"
             value={phone}
-            placeholder="Phone Number"
+            placeholder="Phone Number" 
+            pattern="[0-9]{9,13}"
             onChange={e => {
               this.setState({ phone: e.target.value })
             }}

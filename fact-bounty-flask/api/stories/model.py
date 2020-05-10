@@ -1,4 +1,4 @@
-from api.database import Column, Model, db
+from ..database import Column, Model, db
 from datetime import datetime
 
 
@@ -30,6 +30,7 @@ class Vote(Model):
         """
         db.session.add(self)
         db.session.commit()
+
 
 class Comment(Model):
     """
